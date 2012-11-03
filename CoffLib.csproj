@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A8CC985-EDC9-4CBC-81DE-83135FAE4D86}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoffLib</RootNamespace>
+    <AssemblyName>CoffLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binary\Block.cs" />
+    <Compile Include="Binary\Util.cs" />
+    <Compile Include="Binary\Val16.cs" />
+    <Compile Include="Binary\Val32.cs" />
+    <Compile Include="Binary\Val64.cs" />
+    <Compile Include="Binary\WriterBase.cs" />
+    <Compile Include="PE\DOSHeader.cs" />
+    <Compile Include="PE\Function.cs" />
+    <Compile Include="PE\HeaderBase.cs" />
+    <Compile Include="PE\Module.cs" />
+    <Compile Include="PE\PEHeaders.cs" />
+    <Compile Include="PE\Section\AnySection.cs" />
+    <Compile Include="PE\Section\DataSection.cs" />
+    <Compile Include="PE\Section\ImportSection.cs" />
+    <Compile Include="PE\Section\Library.cs" />
+    <Compile Include="PE\Section\SectionBase.cs" />
+    <Compile Include="PE\Section\Symbol.cs" />
+    <Compile Include="PE\Section\TextSection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="X86\Addr32.cs" />
+    <Compile Include="X86\Enums.cs" />
+    <Compile Include="X86\I386.1.16.cs" />
+    <Compile Include="X86\I386.1.32.cs" />
+    <Compile Include="X86\I386.1.8.cs" />
+    <Compile Include="X86\I386.2.16.cs" />
+    <Compile Include="X86\I386.2.32.cs" />
+    <Compile Include="X86\I386.2.8.cs" />
+    <Compile Include="X86\I386.Call.cs" />
+    <Compile Include="X86\I386.cs" />
+    <Compile Include="X86\I386.Movx.16.cs" />
+    <Compile Include="X86\I386.Movx.8.cs" />
+    <Compile Include="X86\I386.Shift.16.cs" />
+    <Compile Include="X86\I386.Shift.32.cs" />
+    <Compile Include="X86\I386.Shift.8.cs" />
+    <Compile Include="X86\I386.Test.1.16.cs" />
+    <Compile Include="X86\I386.Test.1.32.cs" />
+    <Compile Include="X86\I386.Test.1.8.cs" />
+    <Compile Include="X86\I386.Test.2.16.cs" />
+    <Compile Include="X86\I386.Test.2.32.cs" />
+    <Compile Include="X86\I386.Test.2.8.cs" />
+    <Compile Include="X86\I386.Test.cs" />
+    <Compile Include="X86\I386.Test.Movx.16.cs" />
+    <Compile Include="X86\I386.Test.Movx.8.cs" />
+    <Compile Include="X86\I386.Test.Shift.16.cs" />
+    <Compile Include="X86\I386.Test.Shift.32.cs" />
+    <Compile Include="X86\I386.Test.Shift.8.cs" />
+    <Compile Include="X86\I586.cs" />
+    <Compile Include="X86\I8086.cs" />
+    <Compile Include="X86\MMX.cs" />
+    <Compile Include="X86\MMX.Test.cs" />
+    <Compile Include="X86\OpCode.cs" />
+    <Compile Include="X86\OpCodes.cs" />
+    <Compile Include="X86\SSE2.cs" />
+    <Compile Include="X86\SSE2.Test.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
